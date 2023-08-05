@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { join, resolve } from "path";
 import getDatabaseConnection from "./getDatabaseConnection.js";
 import message from "./message.js";

@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import shelljs from "shelljs";
 import minimist from "minimist";
 import createTableDocument from "./createTableDocument.js";
 
 // 현재 작업 디렉토리
-const cwd = shelljs.pwd().toString().replaceAll("\\", "/");
+const cwd = shelljs.pwd().toString();
 
 // 명령줄 파라미터
 const {d, h, u, p, output, port} = minimist(process.argv.slice(2));

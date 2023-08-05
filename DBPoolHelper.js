@@ -1,8 +1,10 @@
+#!/usr/bin/env node
 /**
  * @FileName : DBPoolHelper.js
  * @Description : 데이터베이스 커텍션 풀 관리 클래스
  * @Author : Lee Kwang-Ho (leekh4232@gmail.com)
  */
+
 import mysql from "mysql2/promise";
 /**
  * DATABASE Connection Pool을 관리하기 위한 SingleTon 클래스

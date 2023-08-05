@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import DBPoolHelper from "./DBPoolHelper.js";
 
 const getDatabaseConnection = async (connectionInfo) => {

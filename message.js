@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Table } from "console-table-printer";
 
 const message = (msg, ms = 500, table = false) => {
