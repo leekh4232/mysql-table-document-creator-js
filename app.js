@@ -34,7 +34,15 @@ for (let key in env) {
 }
 
 
-createTableDocument(env);
+(async () => {
+    try {
+        await createTableDocument(env);
+    } catch (err) {
+        console.error(err);
+    } finally {
+        process.exit(1);
+    }
+})();
 
 
 

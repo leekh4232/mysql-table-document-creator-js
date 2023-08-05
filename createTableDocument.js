@@ -239,9 +239,6 @@ const createTableDocument = async (env) => {
         if (dbcon) {
             dbcon.release();
         }
-        await message(`프로그램을 종료합니다. :)`);
-
-        process.exit(1);
     }
 };
 

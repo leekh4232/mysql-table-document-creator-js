@@ -1,6 +1,6 @@
 {
   "name": "mysql-table-document-creator-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MySQL의 테이블 명세서를 생성할 수 있는 CLI기반 Node 프로그램 입니다.",
   "main": "app.js",
   "bin": {
