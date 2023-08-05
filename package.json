@@ -1,5 +1,5 @@
 {
-  "name": "mysql-table-document-creator-js",
+  "name": "create_mysql_doc",
   "version": "1.0.0",
   "description": "MySQL의 테이블 명세서를 생성할 수 있는 CLI기반 Node 프로그램 입니다.",
   "main": "app.js",
@@ -12,7 +12,9 @@
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "exceljs": "^4.3.0",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "minimist": "^1.2.8",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "pkg": "^5.8.0"

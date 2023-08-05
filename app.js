@@ -7,6 +7,31 @@ import dayjs from "dayjs";
 // https://github.com/exceljs/exceljs
 import ExcelJS from "exceljs";
 import { exit } from "process";
+import shelljs from "shelljs";
+import minimist from "minimist";
+
+// 현재 작업 디렉토리
+const cwd = shelljs.pwd().toString().replaceAll("\\", "/");
+
+// 명령줄 파라미터
+const {d, h, u, p, output, port} = minimist(process.argv.slice(2));
+
+// 연동정보 설정
+const database = d || "test";
+const hostname = h || "127.0.0.1";
+const username = u || "root";
+const password = p || "123qwe!@#";
+const outputDir = output || cwd;
+const portNumber = port || 3306;
+
+// console.log("============================");
+// console.log(`hostname: ${hostname}`);
+// console.log(`port-number: ${portNumber}`);
+// console.log(`database: ${database}`);
+// console.log(`username: ${username}`);
+// console.log(`password: ${password}`);
+// console.log(`outputDir: ${outputDir}`);
+// console.log("============================");
 
 function message(msg, ms = 500, table = false) {
     if (table) {
@@ -26,46 +51,16 @@ function message(msg, ms = 500, table = false) {
     });
 }
 
-// 설정 파일 내용 가져오기
-const configFileName = "config.env";
-const configPath = join(resolve(), configFileName);
-
-// 파일이 존재하지 않을 경우 강제로 에러 발생함.
-if (!fs.existsSync(configPath)) {
-    console.error("================================================");
-    console.error("|          Configuration Init Error            |");
-    console.error("================================================");
-    console.error("환경설정 파일을 찾을 수 없습니다.");
-    console.error("환경설정 아래 경로의 파일을 확인하고 내용을 작성하세요.");
-    console.error(`환경설정 파일 경로: ${configPath}`);
-    console.error("환경설정 파일의 기본 템플릿을 생성합니다.");
-    (async () => {
-        try {
-            await fs.promises.writeFile(configPath, "DATABASE_HOST = \nDATABASE_PORT = \nDATABASE_USERNAME = \nDATABASE_PASSWORD = \nDATABASE_SCHEMA = \n");
-            fs.promises.chmod(configPath, "0755");
-        } catch (err) {
-            console.error("환경설정 파일을 자동생성할 수 없습니다.");
-            console.error(err);
-        }
-    })();
-
-    console.error("프로그램을 종료합니다.");
-    process.exit(1);
-}
-
-// 설정파일을 로드한다.
-dotenv.config({ path: configPath });
-
 // 생성될 파일의 이름을 지정한다.
-const outputFileName = `${process.env.DATABASE_SCHEMA}_테이블명세서_${dayjs().format("YYMMDD_HHmmss")}.xlsx`;
+const outputFileName = `${outputDir}/${database}_테이블명세서_${dayjs().format("YYMMDD_HHmmss")}.xlsx`;
 
 // 접속 정보 설정
 const connectionInfo = {
-    host: process.env.DATABASE_HOST, // MYSQL 서버 주소 (다른 PC인 경우 IP주소),
-    port: process.env.DATABASE_PORT, // MYSQL 포트번호
-    user: process.env.DATABASE_USERNAME, // MYSQL의 로그인 할 수 있는 계정이름
-    password: process.env.DATABASE_PASSWORD, // 비밀번호
-    database: process.env.DATABASE_SCHEMA, // 사용하고자 하는 데이터베이스 이름
+    host: hostname, // MYSQL 서버 주소 (다른 PC인 경우 IP주소),
+    port: portNumber, // MYSQL 포트번호
+    user: username, // MYSQL의 로그인 할 수 있는 계정이름
+    password: password, // 비밀번호
+    database: database, // 사용하고자 하는 데이터베이스 이름
 };
 
 console.log("================================================");
@@ -246,6 +241,7 @@ const bodyStyle = {
             sheet1.getCell(`F${currentRow}`).fill = bodyStyle.fill;
             sheet1.getCell(`G${currentRow}`).fill = bodyStyle.fill;
             sheet1.getCell(`H${currentRow}`).fill = bodyStyle.fill;
+            sheet1.getCell(`H${currentRow}`).style = bodyStyle;
             currentRow++;
 
             sheet1.addRow(["No", "필드명", "데이터타입", "널허용", "키", "옵션", "기본값", "설명"]);
