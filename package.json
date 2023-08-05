@@ -1,8 +1,11 @@
 {
-  "name": "create_mysql_doc",
+  "name": "make_mysql_doc",
   "version": "1.0.0",
   "description": "MySQL의 테이블 명세서를 생성할 수 있는 CLI기반 Node 프로그램 입니다.",
   "main": "app.js",
+  "bin": {
+    "make_mysql_doc": "app.js"
+  },
   "repository": "https://github.com/leekh4232/mysql-table-document-creator-js.git",
   "author": "이광호(leekh4232@gmail.com)",
   "license": "MIT",
