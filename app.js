@@ -2,26 +2,39 @@
 
 import shelljs from "shelljs";
 import minimist from "minimist";
+import commandLineArgs from "command-line-args";
 import createTableDocument from "./createTableDocument.js";
+
+const optionDefinitions = [
+  { name: 'host', alias: 'h', type: String },
+  { name: 'port', type: Number },
+  { name: 'user', alias: 'u', type: String },
+  { name: 'password', alias: 'p', type: String },
+  { name: 'database', alias: 'd', type: String },
+  { name: 'output', alias: 'o', type: String }
+]
+
+const options = commandLineArgs(optionDefinitions);
 
 // 현재 작업 디렉토리
 const cwd = shelljs.pwd().toString();
 
-// 명령줄 파라미터
-const {d, h, u, p, output, port} = minimist(process.argv.slice(2));
 
 // DATABASE 연동정보 설정
 const env = {
-    host : h || "127.0.0.1",
-    port : port || 3306,
-    user : u || "root",
-    password : p || "123qwe!@#",
-    database : d || "myschool",
-    output : output || cwd,
+    host : options['host'] || "127.0.0.1",
+    port : options['port'] || 3306,
+    user : options['user'] || "root",
+    password : options['password'] || "1234",
+    database : options['database'] || "myschool",
+    output : options['output'] || cwd,
     connectionLimit: 10,
     connectTimeout: 30000,
     waitForConnections: true
 };
+
+// console.log(env);
+// process.exit();
 
 // 프로그램 시작
 console.clear();
@@ -43,7 +56,3 @@ for (let key in env) {
         process.exit(1);
     }
 })();
-
-
-
-
