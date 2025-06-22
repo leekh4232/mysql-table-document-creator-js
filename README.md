@@ -7,28 +7,20 @@ MySQL의 테이블 명세서를 생성하는 Node 프로그램입니다.
 
 ## 사용 방법
 
-### 1) 의존성 패키지 설치
+### 1) 설치
 
-프로젝트 디렉토리 안에서 명령을 수행합니다.
-
-```shell
-npm install
-```
-
-### 2) 현재 컴퓨터에 명령어로 등록하기
-
-프로젝트 디렉토리 안에서 명령을 수행합니다.
+터미널에서 아래의 명령을 수행합니다.
 
 ```shell
-npm install -g .
+$ npm install -g git@github.com:leekh4232/mysql-table-document-creator-js.git
 ```
 
 ### 3) 명령프롬프트 상에서 실행
 
 이후 이 프로그램을 운영체제 안에서 명령어로 사용할 수 있습니다.
 
-```
-create_mysql_doc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -output 생성될폴더경로 -port 포트번호
+```shell
+$ tbldoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -output 생성될폴더경로 -port 포트번호
 ```
 
 | 파라미터 | 설명 | 기본값 |
