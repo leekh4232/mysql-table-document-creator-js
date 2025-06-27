@@ -23,7 +23,7 @@ const cwd = shelljs.pwd().toString();
 // DATABASE 연동정보 설정
 const env = {
     host : options['host'] || "127.0.0.1",
-    port : options['port'] || 3306,
+    port : options['port'] || 9090,
     user : options['user'] || "root",
     password : options['password'] || "1234",
     database : options['database'] || "myschool",
