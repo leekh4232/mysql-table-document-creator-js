@@ -33,8 +33,8 @@ $ tabledoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -ou
 | -d | DB이름 | test |
 | -u | 사용자계정 | root |
 | -p | 비밀번호 | 123qwe!@# |
-| -output | 생성될폴더경로 | 현재 작업 디렉토리 |
-| -port | 포트번호 | 3306 |
+| -o | 생성될폴더경로 | 현재 작업 디렉토리 |
+| --port | 포트번호 | 3306 |
 
 #### 사용 예시
 
@@ -43,7 +43,7 @@ $ tabledoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -ou
 그 밖의 나머지는 기본값 사용
 
 ```shell
-$ tabledoc -d myschool -u root -p 1234 -port 9090
+$ tabledoc -d myschool -u root -p 1234 --port 9090
 ```
 
 ### 4) 생성된 엑셀 파일 확인

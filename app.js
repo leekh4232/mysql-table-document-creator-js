@@ -9,7 +9,7 @@ const optionDefinitions = [
   { name: 'host', alias: 'h', type: String },
   { name: 'port', type: Number },
   { name: 'user', alias: 'u', type: String },
-  { name: 'pass', alias: 'p', type: String },
+  { name: 'password', alias: 'p', type: String },
   { name: 'database', alias: 'd', type: String },
   { name: 'output', alias: 'o', type: String }
 ]
