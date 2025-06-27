@@ -39,7 +39,7 @@ $ tabledoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -ou
 그 밖의 나머지는 기본값 사용
 
 ```shell
-$ table doc -d myschool -u root -p 1234 -port 9090
+$ tabledoc -d myschool -u root -p 1234 -port 9090
 ```
 
 ### 4) 생성된 엑셀 파일 확인
