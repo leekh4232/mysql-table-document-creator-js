@@ -13,7 +13,13 @@ MySQL의 테이블 명세서를 생성하는 Node 프로그램입니다.
 
 > https://nodejs.org/ko
 
-터미널에서 아래의 명령을 수행합니다.
+Node.js의 설치 확인은 다음 명령어로 가능합니다.
+
+```shell
+$ node --version
+```
+
+Node.js가 확인되었다면 터미널에서 아래의 명령을 수행합니다.
 
 ```shell
 $ npm install -g https://github.com/leekh4232/mysql-table-document-creator-js.git
