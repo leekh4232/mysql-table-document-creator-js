@@ -20,7 +20,7 @@ $ npm install -g git@github.com:leekh4232/mysql-table-document-creator-js.git
 이후 이 프로그램을 운영체제 안에서 명령어로 사용할 수 있습니다.
 
 ```shell
-$ tbldoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -output 생성될폴더경로 -port 포트번호
+$ tabledoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -output 생성될폴더경로 -port 포트번호
 ```
 
 | 파라미터 | 설명 | 기본값 |
@@ -39,5 +39,5 @@ $ tbldoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -outp
 ### 5) 프로그램 삭제시
 
 ```shell
-npm uninstall -g tbldoc
+npm uninstall -g tabledoc
 ```
