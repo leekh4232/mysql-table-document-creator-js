@@ -12,7 +12,7 @@ MySQL의 테이블 명세서를 생성하는 Node 프로그램입니다.
 터미널에서 아래의 명령을 수행합니다.
 
 ```shell
-$ npm install -g git@github.com:leekh4232/mysql-table-document-creator-js.git
+$ npm install -g https://github.com/leekh4232/mysql-table-document-creator-js.git
 ```
 
 ### 3) 명령프롬프트 상에서 실행
@@ -31,6 +31,16 @@ $ tabledoc -h 호스트주소 -d DB이름 -u 사용자계정 -p 비밀번호 -ou
 | -p | 비밀번호 | 123qwe!@# |
 | -output | 생성될폴더경로 | 현재 작업 디렉토리 |
 | -port | 포트번호 | 3306 |
+
+#### 사용 예시
+
+데이터베이스 이름은 `myschool`이고 `root`계정의 비밀번호는 `1234`이며 데이터베이스 포트번호는 `9090`인 경우
+
+그 밖의 나머지는 기본값 사용
+
+```shell
+$ table doc -d myschool -u root -p 1234 -port 9090
+```
 
 ### 4) 생성된 엑셀 파일 확인
 
