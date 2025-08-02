@@ -25,7 +25,7 @@ const env = {
     host : options['host'] || "127.0.0.1",
     port : options['port'] || 9090,
     user : options['user'] || "root",
-    password : options['pass'] || "1234",
+    password : options['password'] || "1234",
     database : options['database'] || "myschool",
     output : options['output'] || cwd,
     connectionLimit: 10,
